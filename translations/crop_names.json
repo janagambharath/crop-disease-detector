@@ -1,0 +1,243 @@
+{
+  "crops": {
+    "tomato": {
+      "english": "Tomato",
+      "telugu": "టమోటా",
+      "hindi": "टमाटर"
+    },
+    "potato": {
+      "english": "Potato",
+      "telugu": "బంగాళాదుంప",
+      "hindi": "आलू"
+    },
+    "chili": {
+      "english": "Chili/Pepper",
+      "telugu": "మిరపకాయ",
+      "hindi": "मिर्च"
+    },
+    "pepper": {
+      "english": "Pepper",
+      "telugu": "మిరపకాయ",
+      "hindi": "मिर्च"
+    },
+    "brinjal": {
+      "english": "Brinjal/Eggplant",
+      "telugu": "వంకాయ",
+      "hindi": "बैंगन"
+    },
+    "eggplant": {
+      "english": "Eggplant",
+      "telugu": "వంకాయ",
+      "hindi": "बैंगन"
+    },
+    "cotton": {
+      "english": "Cotton",
+      "telugu": "పత్తి",
+      "hindi": "कपास"
+    },
+    "rice": {
+      "english": "Rice/Paddy",
+      "telugu": "వరి",
+      "hindi": "चावल"
+    },
+    "paddy": {
+      "english": "Paddy",
+      "telugu": "వరి",
+      "hindi": "धान"
+    },
+    "wheat": {
+      "english": "Wheat",
+      "telugu": "గోధుమ",
+      "hindi": "गेहूं"
+    },
+    "corn": {
+      "english": "Corn/Maize",
+      "telugu": "మొక్కజొన్న",
+      "hindi": "मक्का"
+    },
+    "maize": {
+      "english": "Maize",
+      "telugu": "మొక్కజొన్న",
+      "hindi": "मक्का"
+    },
+    "groundnut": {
+      "english": "Groundnut/Peanut",
+      "telugu": "వేరుశనగ",
+      "hindi": "मूंगफली"
+    },
+    "peanut": {
+      "english": "Peanut",
+      "telugu": "వేరుశనగ",
+      "hindi": "मूंगफली"
+    },
+    "soybean": {
+      "english": "Soybean",
+      "telugu": "సోయాబీన్",
+      "hindi": "सोयाबीन"
+    },
+    "chickpea": {
+      "english": "Chickpea",
+      "telugu": "శనగలు",
+      "hindi": "चना"
+    },
+    "banana": {
+      "english": "Banana",
+      "telugu": "అరటి",
+      "hindi": "केला"
+    },
+    "grape": {
+      "english": "Grape",
+      "telugu": "ద్రాక్ష",
+      "hindi": "अंगूर"
+    },
+    "apple": {
+      "english": "Apple",
+      "telugu": "ఆపిల్",
+      "hindi": "सेब"
+    }
+  },
+  "diseases": {
+    "early_blight": {
+      "english": "Early Blight",
+      "telugu": "ప్రారంభ బ్లైట్",
+      "hindi": "प्रारंभिक ब्लाइट"
+    },
+    "late_blight": {
+      "english": "Late Blight",
+      "telugu": "ఆలస్యపు బ్లైట్",
+      "hindi": "देर से ब्लाइट"
+    },
+    "leaf_mold": {
+      "english": "Leaf Mold",
+      "telugu": "ఆకు బూజు",
+      "hindi": "पत्ती फफूंद"
+    },
+    "septoria_leaf_spot": {
+      "english": "Septoria Leaf Spot",
+      "telugu": "సెప్టోరియా ఆకు మచ్చ",
+      "hindi": "सेप्टोरिया पत्ती धब्बा"
+    },
+    "spider_mites": {
+      "english": "Spider Mites",
+      "telugu": "సాలీడు పురుగులు",
+      "hindi": "मकड़ी कीट"
+    },
+    "target_spot": {
+      "english": "Target Spot",
+      "telugu": "లక్ష్య మచ్చ",
+      "hindi": "लक्ष्य धब्बा"
+    },
+    "yellow_leaf_curl_virus": {
+      "english": "Yellow Leaf Curl Virus",
+      "telugu": "పసుపు ఆకు వక్ర వైరస్",
+      "hindi": "पीली पत्ती कर्ल वायरस"
+    },
+    "mosaic_virus": {
+      "english": "Mosaic Virus",
+      "telugu": "మొజాయిక్ వైరస్",
+      "hindi": "मोज़ेक वायरस"
+    },
+    "bacterial_spot": {
+      "english": "Bacterial Spot",
+      "telugu": "బ్యాక్టీరియా మచ్చ",
+      "hindi": "जीवाणु धब्बा"
+    },
+    "leaf_curl": {
+      "english": "Leaf Curl",
+      "telugu": "ఆకు వంకర",
+      "hindi": "पत्ती कर्ल"
+    },
+    "pink_bollworm": {
+      "english": "Pink Bollworm",
+      "telugu": "గులాబీ బొండ పురుగు",
+      "hindi": "गुलाबी सुंडी"
+    },
+    "blast": {
+      "english": "Blast",
+      "telugu": "బ్లాస్ట్",
+      "hindi": "ब्लास्ट"
+    },
+    "brown_spot": {
+      "english": "Brown Spot",
+      "telugu": "గోధుమ మచ్చ",
+      "hindi": "भूरा धब्बा"
+    },
+    "bacterial_leaf_blight": {
+      "english": "Bacterial Leaf Blight",
+      "telugu": "బ్యాక్టీరియా ఆకు బ్లైట్",
+      "hindi": "जीवाणु पत्ती झुलसा"
+    },
+    "powdery_mildew": {
+      "english": "Powdery Mildew",
+      "telugu": "పొడి బూజు",
+      "hindi": "चूर्णिल फफूंद"
+    },
+    "downy_mildew": {
+      "english": "Downy Mildew",
+      "telugu": "మెత్తని బూజు",
+      "hindi": "मुलायम फफूंद"
+    },
+    "anthracnose": {
+      "english": "Anthracnose",
+      "telugu": "యాంథ్రాక్నోస్",
+      "hindi": "एन्थ्रेक्नोज"
+    },
+    "rust": {
+      "english": "Rust",
+      "telugu": "తుప్పు",
+      "hindi": "रतुआ"
+    },
+    "healthy": {
+      "english": "Healthy",
+      "telugu": "ఆరోగ్యకరమైనది",
+      "hindi": "स्वस्थ"
+    }
+  },
+  "ui_elements": {
+    "upload_image": {
+      "english": "Upload Leaf Image",
+      "telugu": "ఆకు చిత్రాన్ని అప్‌లోడ్ చేయండి",
+      "hindi": "पत्ती की छवि अपलोड करें"
+    },
+    "detect_disease": {
+      "english": "Detect Disease",
+      "telugu": "వ్యాధిని గుర్తించండి",
+      "hindi": "रोग का पता लगाएं"
+    },
+    "treatment_advice": {
+      "english": "Treatment Advice",
+      "telugu": "చికిత్స సలహా",
+      "hindi": "उपचार सलाह"
+    },
+    "healthy_plant": {
+      "english": "Your plant looks healthy!",
+      "telugu": "మీ మొక్క ఆరోగ్యంగా ఉంది!",
+      "hindi": "आपका पौधा स्वस्थ दिखता है!"
+    },
+    "scan_another": {
+      "english": "Scan Another Leaf",
+      "telugu": "మరో ఆకును స్కాన్ చేయండి",
+      "hindi": "दूसरी पत्ती स्कैन करें"
+    },
+    "confidence_level": {
+      "english": "Confidence Level",
+      "telugu": "విశ్వాస స్థాయి",
+      "hindi": "विश्वास स्तर"
+    },
+    "severity": {
+      "english": "Severity",
+      "telugu": "తీవ్రత",
+      "hindi": "गंभीरता"
+    },
+    "crop": {
+      "english": "Crop",
+      "telugu": "పంట",
+      "hindi": "फसल"
+    },
+    "disease": {
+      "english": "Disease",
+      "telugu": "వ్యాధి",
+      "hindi": "रोग"
+    }
+  }
+}
