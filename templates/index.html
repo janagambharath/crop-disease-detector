@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered crop disease detection for Indian farmers. Supports Telugu, Hindi, and English.">
+    <title>AI Crop Disease Detector - Helping Indian Farmers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🌾</span>
+                    <div>
+                        <h1>AI Crop Disease Detector</h1>
+                        <p>Empowering Indian Farmers</p>
+                    </div>
+                </div>
+                
+                <div class="language-selector">
+                    <button class="lang-btn {% if lang == 'english' %}active{% endif %}" data-lang="english">English</button>
+                    <button class="lang-btn {% if lang == 'hindi' %}active{% endif %}" data-lang="hindi">हिंदी</button>
+                    <button class="lang-btn {% if lang == 'telugu' %}active{% endif %}" data-lang="telugu">తెలుగు</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="content-card">
+                <!-- Hero Section -->
+                <div class="hero">
+                    <h2>
+                        {% if lang == 'telugu' %}
+                            మీ పంటల ఆరోగ్యాన్ని రక్షించండి
+                        {% elif lang == 'hindi' %}
+                            अपनी फसलों की सेहत की रक्षा करें
+                        {% else %}
+                            Protect Your Crops' Health
+                        {% endif %}
+                    </h2>
+                    <p>
+                        {% if lang == 'telugu' %}
+                            ఆకు ఫోటో అప్‌లోడ్ చేసి, వ్యాధిని గుర్తించి, తక్షణ చికిత్స పొందండి
+                        {% elif lang == 'hindi' %}
+                            पत्ती की फोटो अपलोड करें, बीमारी का पता लगाएं, तुरंत उपचार पाएं
+                        {% else %}
+                            Upload a leaf photo, detect disease, get instant treatment advice
+                        {% endif %}
+                    </p>
+                    
+                    <a href="{{ url_for('upload') }}" class="btn btn-primary">
+                        <span>📸</span>
+                        {% if lang == 'telugu' %}
+                            ఆకు ఫోటో అప్‌లోడ్ చేయండి
+                        {% elif lang == 'hindi' %}
+                            पत्ती की फोटो अपलोड करें
+                        {% else %}
+                            Upload Leaf Photo
+                        {% endif %}
+                    </a>
+                </div>
+
+                <!-- Features -->
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔬</div>
+                        <h3>
+                            {% if lang == 'telugu' %}
+                                AI శక్తితో
+                            {% elif lang == 'hindi' %}
+                                AI से संचालित
+                            {% else %}
+                                AI-Powered
+                            {% endif %}
+                        </h3>
+                        <p>
+                            {% if lang == 'telugu' %}
+                                30+ వ్యాధులను 10+ పంటలలో గుర్తించండి
+                            {% elif lang == 'hindi' %}
+                                10+ फसलों में 30+ बीमारियों का पता लगाएं
+                            {% else %}
+                                Detect 30+ diseases across 10+ crops
+                            {% endif %}
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h3>
+                            {% if lang == 'telugu' %}
+                                మీ భాషలో
+                            {% elif lang == 'hindi' %}
+                                आपकी भाषा में
+                            {% else %}
+                                Your Language
+                            {% endif %}
+                        </h3>
+                        <p>
+                            {% if lang == 'telugu' %}
+                                తెలుగు, హిందీ మరియు ఇంగ్లీష్‌లో పూర్తి మద్దతు
+                            {% elif lang == 'hindi' %}
+                                तेलुगु, हिंदी और अंग्रेजी में पूर्ण समर्थन
+                            {% else %}
+                                Full support in Telugu, Hindi & English
+                            {% endif %}
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">💊</div>
+                        <h3>
+                            {% if lang == 'telugu' %}
+                                చికిత్స సలహా
+                            {% elif lang == 'hindi' %}
+                                उपचार सलाह
+                            {% else %}
+                                Treatment Advice
+                            {% endif %}
+                        </h3>
+                        <p>
+                            {% if lang == 'telugu' %}
+                                సేంద్రీయ మరియు రసాయన చికిత్సా ఎంపికలు
+                            {% elif lang == 'hindi' %}
+                                जैविक और रासायनिक उपचार विकल्प
+                            {% else %}
+                                Organic and chemical treatment options
+                            {% endif %}
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>
+                            {% if lang == 'telugu' %}
+                                వేగవంతమైన ఫలితాలు
+                            {% elif lang == 'hindi' %}
+                                तेज़ परिणाम
+                            {% else %}
+                                Fast Results
+                            {% endif %}
+                        </h3>
+                        <p>
+                            {% if lang == 'telugu' %}
+                                5 సెకన్లలోపు వ్యాధి గుర్తింపు
+                            {% elif lang == 'hindi' %}
+                                5 सेकंड से कम में बीमारी का पता
+                            {% else %}
+                                Disease detection in under 5 seconds
+                            {% endif %}
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>
+                            {% if lang == 'telugu' %}
+                                మొబైల్ స్నేహపూర్వక
+                            {% elif lang == 'hindi' %}
+                                मोबाइल फ्रेंडली
+                            {% else %}
+                                Mobile Friendly
+                            {% endif %}
+                        </h3>
+                        <p>
+                            {% if lang == 'telugu' %}
+                                ఏ పరికరంలోనైనా, ఎక్కడైనా పని చేస్తుంది
+                            {% elif lang == 'hindi' %}
+                                किसी भी डिवाइस पर, कहीं भी काम करता है
+                            {% else %}
+                                Works on any device, anywhere
+                            {% endif %}
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>
+                            {% if lang == 'telugu' %}
+                                ఖచ్చితత్వం
+                            {% elif lang == 'hindi' %}
+                                सटीकता
+                            {% else %}
+                                Accuracy
+                            {% endif %}
+                        </h3>
+                        <p>
+                            {% if lang == 'telugu' %}
+                                85%+ వ్యాధి గుర్తింపు ఖచ్చితత్వం
+                            {% elif lang == 'hindi' %}
+                                85%+ बीमारी पहचान सटीकता
+                            {% else %}
+                                85%+ disease detection accuracy
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Supported Crops Section -->
+                <div style="margin-top: 50px; text-align: center;">
+                    <h2 style="color: var(--primary-green); margin-bottom: 20px;">
+                        {% if lang == 'telugu' %}
+                            మద్దతు ఉన్న పంటలు
+                        {% elif lang == 'hindi' %}
+                            समर्थित फसलें
+                        {% else %}
+                            Supported Crops
+                        {% endif %}
+                    </h2>
+                    <p style="font-size: 1.2rem; line-height: 1.8;">
+                        🍅 
+                        {% if lang == 'telugu' %}టమోటా{% elif lang == 'hindi' %}टमाटर{% else %}Tomato{% endif %}
+                        &nbsp;•&nbsp;
+                        🥔 
+                        {% if lang == 'telugu' %}బంగాళాదుంప{% elif lang == 'hindi' %}आलू{% else %}Potato{% endif %}
+                        &nbsp;•&nbsp;
+                        🌶️ 
+                        {% if lang == 'telugu' %}మిరపకాయ{% elif lang == 'hindi' %}मिर्च{% else %}Chili{% endif %}
+                        &nbsp;•&nbsp;
+                        🍆 
+                        {% if lang == 'telugu' %}వంకాయ{% elif lang == 'hindi' %}बैंगन{% else %}Brinjal{% endif %}
+                        <br>
+                        🌾 
+                        {% if lang == 'telugu' %}వరి{% elif lang == 'hindi' %}चावल{% else %}Rice{% endif %}
+                        &nbsp;•&nbsp;
+                        🌾 
+                        {% if lang == 'telugu' %}గోధుమ{% elif lang == 'hindi' %}गेहूं{% else %}Wheat{% endif %}
+                        &nbsp;•&nbsp;
+                        🌽 
+                        {% if lang == 'telugu' %}మొక్కజొన్న{% elif lang == 'hindi' %}मक्का{% else %}Corn{% endif %}
+                        &nbsp;•&nbsp;
+                        🥜 
+                        {% if lang == 'telugu' %}వేరుశనగ{% elif lang == 'hindi' %}मूंगफली{% else %}Groundnut{% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>
+                {% if lang == 'telugu' %}
+                    భారతీయ రైతులను సాధికారత చేయడం
+                {% elif lang == 'hindi' %}
+                    भारतीय किसानों को सशक्त बनाना
+                {% else %}
+                    Empowering Indian Farmers
+                {% endif %}
+            </p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">
+                {% if lang == 'telugu' %}
+                    AI సాంకేతికతతో నిర్మించబడింది | భారత వ్యవసాయం కోసం తయారు చేయబడింది
+                {% elif lang == 'hindi' %}
+                    AI तकनीक से निर्मित | भारतीय कृषि के लिए बनाया गया
+                {% else %}
+                    Built with AI Technology | Made for Indian Agriculture
+                {% endif %}
+            </p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
