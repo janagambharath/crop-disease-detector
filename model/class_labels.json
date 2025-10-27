@@ -1,0 +1,192 @@
+{
+  "0": {
+    "crop": "tomato",
+    "disease": "bacterial_spot",
+    "is_healthy": false
+  },
+  "1": {
+    "crop": "tomato",
+    "disease": "early_blight",
+    "is_healthy": false
+  },
+  "2": {
+    "crop": "tomato",
+    "disease": "late_blight",
+    "is_healthy": false
+  },
+  "3": {
+    "crop": "tomato",
+    "disease": "leaf_mold",
+    "is_healthy": false
+  },
+  "4": {
+    "crop": "tomato",
+    "disease": "septoria_leaf_spot",
+    "is_healthy": false
+  },
+  "5": {
+    "crop": "tomato",
+    "disease": "spider_mites",
+    "is_healthy": false
+  },
+  "6": {
+    "crop": "tomato",
+    "disease": "target_spot",
+    "is_healthy": false
+  },
+  "7": {
+    "crop": "tomato",
+    "disease": "yellow_leaf_curl_virus",
+    "is_healthy": false
+  },
+  "8": {
+    "crop": "tomato",
+    "disease": "mosaic_virus",
+    "is_healthy": false
+  },
+  "9": {
+    "crop": "tomato",
+    "disease": "healthy",
+    "is_healthy": true
+  },
+  "10": {
+    "crop": "potato",
+    "disease": "early_blight",
+    "is_healthy": false
+  },
+  "11": {
+    "crop": "potato",
+    "disease": "late_blight",
+    "is_healthy": false
+  },
+  "12": {
+    "crop": "potato",
+    "disease": "healthy",
+    "is_healthy": true
+  },
+  "13": {
+    "crop": "pepper",
+    "disease": "bacterial_spot",
+    "is_healthy": false
+  },
+  "14": {
+    "crop": "pepper",
+    "disease": "healthy",
+    "is_healthy": true
+  },
+  "15": {
+    "crop": "cotton",
+    "disease": "bacterial_spot",
+    "is_healthy": false
+  },
+  "16": {
+    "crop": "cotton",
+    "disease": "leaf_curl",
+    "is_healthy": false
+  },
+  "17": {
+    "crop": "cotton",
+    "disease": "healthy",
+    "is_healthy": true
+  },
+  "18": {
+    "crop": "rice",
+    "disease": "blast",
+    "is_healthy": false
+  },
+  "19": {
+    "crop": "rice",
+    "disease": "brown_spot",
+    "is_healthy": false
+  },
+  "20": {
+    "crop": "rice",
+    "disease": "bacterial_leaf_blight",
+    "is_healthy": false
+  },
+  "21": {
+    "crop": "rice",
+    "disease": "healthy",
+    "is_healthy": true
+  },
+  "22": {
+    "crop": "corn",
+    "disease": "rust",
+    "is_healthy": false
+  },
+  "23": {
+    "crop": "corn",
+    "disease": "leaf_blight",
+    "is_healthy": false
+  },
+  "24": {
+    "crop": "corn",
+    "disease": "healthy",
+    "is_healthy": true
+  },
+  "25": {
+    "crop": "wheat",
+    "disease": "rust",
+    "is_healthy": false
+  },
+  "26": {
+    "crop": "wheat",
+    "disease": "powdery_mildew",
+    "is_healthy": false
+  },
+  "27": {
+    "crop": "wheat",
+    "disease": "healthy",
+    "is_healthy": true
+  },
+  "28": {
+    "crop": "grape",
+    "disease": "black_rot",
+    "is_healthy": false
+  },
+  "29": {
+    "crop": "grape",
+    "disease": "downy_mildew",
+    "is_healthy": false
+  },
+  "30": {
+    "crop": "grape",
+    "disease": "healthy",
+    "is_healthy": true
+  },
+  "31": {
+    "crop": "apple",
+    "disease": "apple_scab",
+    "is_healthy": false
+  },
+  "32": {
+    "crop": "apple",
+    "disease": "black_rot",
+    "is_healthy": false
+  },
+  "33": {
+    "crop": "apple",
+    "disease": "rust",
+    "is_healthy": false
+  },
+  "34": {
+    "crop": "apple",
+    "disease": "healthy",
+    "is_healthy": true
+  },
+  "35": {
+    "crop": "soybean",
+    "disease": "powdery_mildew",
+    "is_healthy": false
+  },
+  "36": {
+    "crop": "soybean",
+    "disease": "healthy",
+    "is_healthy": true
+  },
+  "37": {
+    "crop": "groundnut",
+    "disease": "rust",
+    "is_healthy": false
+  }
+}
