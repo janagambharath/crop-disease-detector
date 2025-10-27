@@ -1,0 +1,142 @@
+{
+  "tomato_early_blight": {
+    "english": "Early blight is caused by the fungus Alternaria solani. It thrives in warm, humid conditions and can reduce yield by 20-30% if left untreated.",
+    "hindi": "अर्ली ब्लाइट अल्टरनेरिया सोलानी नामक कवक के कारण होता है। यह गर्म और नम परिस्थितियों में पनपता है और अगर इलाज न किया जाए तो 20-30% उपज कम कर सकता है।",
+    "telugu": "ఎర్లీ బ్లైట్ అల్టర్నారియా సోలానీ అనే శిలీంధ్రం వల్ల వస్తుంది. ఇది వెచ్చని, తేమతో కూడిన పరిస్థితుల్లో బాగా పెరుగుతుంది మరియు చికిత్స చేయకపోతే 20-30% దిగుబడిని తగ్గిస్తుంది."
+  },
+  "tomato_late_blight": {
+    "english": "Late blight is caused by Phytophthora infestans. It can destroy entire crops within days during favorable conditions. This is the same pathogen that caused the Irish potato famine.",
+    "hindi": "लेट ब्लाइट फाइटोफ्थोरा इन्फेस्टन्स के कारण होता है। अनुकूल परिस्थितियों में यह कुछ दिनों में पूरी फसल नष्ट कर सकता है। यह वही रोगाणु है जिसने आयरिश आलू अकाल का कारण बना था।",
+    "telugu": "లేట్ బ్లైట్ ఫైటోఫ్తోరా ఇన్‌ఫెస్టాన్స్ వల్ల వస్తుంది. అనుకూల పరిస్థితుల్లో ఇది కొన్ని రోజుల్లో మొత్తం పంటను నాశనం చేయగలదు. ఐరిష్ బంగాళాదుంప కరువుకు కారణమైన వ్యాధి కారకం ఇదే."
+  },
+  "tomato_bacterial_spot": {
+    "english": "Bacterial spot is caused by Xanthomonas species. It spreads rapidly through water splash and can survive in plant debris for extended periods.",
+    "hindi": "बैक्टीरियल स्पॉट जैंथोमोनास प्रजाति के कारण होता है। यह पानी के छींटों के माध्यम से तेजी से फैलता है और लंबे समय तक पौधों के मलबे में जीवित रह सकता है।",
+    "telugu": "బ్యాక్టీరియల్ స్పాట్ జాంథోమోనాస్ జాతుల వల్ల వస్తుంది. ఇది నీటి చినుకుల ద్వారా వేగంగా వ్యాపిస్తుంది మరియు చాలా కాలం పాటు మొక్కల శేషాల్లో జీవించగలదు."
+  },
+  "tomato_leaf_mold": {
+    "english": "Leaf mold is caused by Passalora fulva. It primarily affects greenhouse tomatoes and requires high humidity (85%+) to develop.",
+    "hindi": "लीफ मोल्ड पैसलोरा फुल्वा के कारण होता है। यह मुख्य रूप से ग्रीनहाउस टमाटरों को प्रभावित करता है और विकसित होने के लिए उच्च आर्द्रता (85%+) की आवश्यकता होती है।",
+    "telugu": "లీఫ్ మోల్డ్ పాసలోరా ఫుల్వా వల్ల వస్తుంది. ఇది ప్రధానంగా గ్రీన్‌హౌస్ టమోటాలను ప్రభావితం చేస్తుంది మరియు అభివృద్ధి చెందడానికి అధిక తేమ (85%+) అవసరం."
+  },
+  "potato_late_blight": {
+    "english": "Potato late blight can destroy both foliage and tubers. It spreads through wind and rain, and can travel several kilometers from infected fields.",
+    "hindi": "आलू का लेट ब्लाइट पत्तियों और कंदों दोनों को नष्ट कर सकता है। यह हवा और बारिश के माध्यम से फैलता है और संक्रमित खेतों से कई किलोमीटर तक यात्रा कर सकता है।",
+    "telugu": "బంగాళాదుంప లేట్ బ్లైట్ ఆకులు మరియు గడ్డ దినుసులు రెండింటినీ నాశనం చేయగలదు. ఇది గాలి మరియు వర్షం ద్వారా వ్యాపిస్తుంది మరియు సోకిన పొలాల నుండి అనేక కిలోమీటర్ల దూరం వెళ్ళగలదు."
+  },
+  "potato_early_blight": {
+    "english": "Early blight affects lower, older leaves first. It reduces photosynthesis and can cause premature defoliation, leading to smaller tubers.",
+    "hindi": "अर्ली ब्लाइट पहले निचली, पुरानी पत्तियों को प्रभावित करता है। यह प्रकाश संश्लेषण को कम करता है और समय से पहले पत्तियां गिरा सकता है, जिससे कंद छोटे हो जाते हैं।",
+    "telugu": "ఎర్లీ బ్లైట్ మొదట దిగువన ఉన్న, పాత ఆకులను ప్రభావితం చేస్తుంది. ఇది కిరణజన్య సంయోగక్రియను తగ్గిస్తుంది మరియు అకాలంగా ఆకులు రాల్చడం వల్ల చిన్న గడ్డ దినుసులు ఏర్పడతాయి."
+  },
+  "rice_blast": {
+    "english": "Rice blast is caused by Magnaporthe oryzae. It's one of the most destructive rice diseases worldwide and can cause 100% yield loss in severe cases.",
+    "hindi": "धान का ब्लास्ट मैग्नापोर्थे ओरिज़े के कारण होता है। यह दुनिया भर में सबसे विनाशकारी धान रोगों में से एक है और गंभीर मामलों में 100% उपज हानि का कारण बन सकता है।",
+    "telugu": "వరి బ్లాస్ట్ మాగ్నాపోర్థే ఒరైజే వల్ల వస్తుంది. ఇది ప్రపంచవ్యాప్తంగా అత్యంత వినాశకరమైన వరి వ్యాధులలో ఒకటి మరియు తీవ్రమైన సందర్భాల్లో 100% దిగుబడి నష్టాన్ని కలిగిస్తుంది."
+  },
+  "rice_brown_spot": {
+    "english": "Brown spot thrives in nitrogen-deficient soils. It can affect all plant parts and reduces grain quality significantly.",
+    "hindi": "ब्राउन स्पॉट नाइट्रोजन की कमी वाली मिट्टी में पनपता है। यह पौधे के सभी हिस्सों को प्रभावित कर सकता है और अनाज की गुणवत्ता को काफी कम कर देता है।",
+    "telugu": "బ్రౌన్ స్పాట్ నత్రజని లోపం ఉన్న నేలల్లో బాగా పెరుగుతుంది. ఇది మొక్క యొక్క అన్ని భాగాలను ప్రభావితం చేయగలదు మరియు ధాన్యం నాణ్యతను గణనీయంగా తగ్గిస్తుంది."
+  },
+  "rice_bacterial_leaf_blight": {
+    "english": "Bacterial leaf blight is caused by Xanthomonas oryzae. It's especially severe during monsoon seasons and in high-nitrogen conditions.",
+    "hindi": "बैक्टीरियल लीफ ब्लाइट जैंथोमोनास ओरिज़े के कारण होता है। यह विशेष रूप से मानसून के मौसम में और उच्च नाइट्रोजन की स्थिति में गंभीर होता है।",
+    "telugu": "బ్యాక్టీరియల్ లీఫ్ బ్లైట్ జాంథోమోనాస్ ఒరైజే వల్ల వస్తుంది. ఇది ముఖ్యంగా వర్షాకాలంలో మరియు అధిక నత్రజని పరిస్థితుల్లో తీవ్రంగా ఉంటుంది."
+  },
+  "corn_rust": {
+    "english": "Corn rust appears as circular to elongated pustules. Severe infections can reduce yield by 30-40% and affect grain quality.",
+    "hindi": "मकई का रस्ट गोलाकार से लम्बी फुंसियों के रूप में दिखाई देता है। गंभीर संक्रमण 30-40% उपज कम कर सकता है और अनाज की गुणवत्ता को प्रभावित कर सकता है।",
+    "telugu": "మొక్కజొన్న రస్ట్ వృత్తాకార నుండి పొడుగు చీము పొక్కులుగా కనిపిస్తుంది. తీవ్రమైన సంక్రమణలు 30-40% దిగుబడిని తగ్గించగలవు మరియు ధాన్యం నాణ్యతను ప్రభావితం చేస్తాయి."
+  },
+  "wheat_rust": {
+    "english": "Wheat rust can spread rapidly over large areas. There are three types: stem rust, leaf rust, and stripe rust, each requiring specific management.",
+    "hindi": "गेहूं का रस्ट बड़े क्षेत्रों में तेजी से फैल सकता है। तीन प्रकार हैं: तना रस्ट, पत्ती रस्ट, और पट्टी रस्ट, प्रत्येक को विशिष्ट प्रबंधन की आवश्यकता होती है।",
+    "telugu": "గోధుమ రస్ట్ పెద్ద ప్రాంతాల్లో వేగంగా వ్యాపించగలదు. మూడు రకాలు ఉన్నాయి: కాండం రస్ట్, ఆకు రస్ట్ మరియు చారల రస్ట్, ప్రతి దానికీ నిర్దిష్ట నిర్వహణ అవసరం."
+  },
+  "cotton_leaf_curl": {
+    "english": "Cotton leaf curl is transmitted by whiteflies. It's a viral disease that can devastate cotton crops, especially in warm climates.",
+    "hindi": "कपास का लीफ कर्ल सफेद मक्खियों द्वारा प्रेषित होता है। यह एक वायरल बीमारी है जो कपास की फसलों को तबाह कर सकती है, खासकर गर्म जलवायु में।",
+    "telugu": "పత్తి లీఫ్ కర్ల్ తెల్ల ఈగల ద్వారా వ్యాప్తి చెందుతుంది. ఇది ఒక వైరల్ వ్యాధి, ముఖ్యంగా వెచ్చని వాతావరణంలో పత్తి పంటలను నాశనం చేయగలదు."
+  },
+  "pepper_bacterial_spot": {
+    "english": "Bacterial spot on peppers causes defoliation and unmarketable fruits. It's seed-borne and can persist in crop debris.",
+    "hindi": "मिर्च पर बैक्टीरियल स्पॉट पत्तियां गिराता है और फलों को बाजार के लायक नहीं बनाता। यह बीज-जनित है और फसल मलबे में बना रह सकता है।",
+    "telugu": "మిరపకాయపై బ్యాక్టీరియల్ స్పాట్ ఆకులు రాల్చడం మరియు అమ్మలేని ఫలాలను కలిగిస్తుంది. ఇది విత్తన ద్వారా వ్యాప్తి చెందుతుంది మరియు పంట శేషాల్లో కొనసాగవచ్చు."
+  },
+  "grape_black_rot": {
+    "english": "Black rot can destroy entire grape clusters. The fungus overwinters in infected plant debris and requires warm, wet conditions to thrive.",
+    "hindi": "ब्लैक रॉट पूरे अंगूर के गुच्छों को नष्ट कर सकता है। कवक संक्रमित पौधे के मलबे में सर्दियों में जीवित रहता है और पनपने के लिए गर्म, गीली परिस्थितियों की आवश्यकता होती है।",
+    "telugu": "బ్లాక్ రాట్ మొత్తం ద్రాక్ష గుత్తులను నాశనం చేయగలదు. శిలీంధ్రం సోకిన మొక్కల శేషాల్లో శీతాకాలంలో జీవించి ఉంటుంది మరియు వృద్ధి చెందడానికి వెచ్చని, తడి పరిస్థితులు అవసరం."
+  },
+  "grape_downy_mildew": {
+    "english": "Downy mildew affects all green parts of the grapevine. It's most severe in cool, wet weather and can reduce yield and fruit quality.",
+    "hindi": "डाउनी मिल्ड्यू अंगूर की बेल के सभी हरे भागों को प्रभावित करता है। यह ठंडे, गीले मौसम में सबसे गंभीर होता है और उपज और फल की गुणवत्ता को कम कर सकता है।",
+    "telugu": "డౌనీ మిల్డ్యూ ద్రాక్ష తీగ యొక్క అన్ని ఆకుపచ్చ భాగాలను ప్రభావితం చేస్తుంది. ఇది చల్లని, తడి వాతావరణంలో అత్యంత తీవ్రంగా ఉంటుంది మరియు దిగుబడి మరియు పండు నాణ్యతను తగ్గించగలదు."
+  },
+  "apple_scab": {
+    "english": "Apple scab is caused by Venturia inaequalis. It affects leaves and fruits, causing dark, scabby lesions that reduce marketability.",
+    "hindi": "ऐप्पल स्कैब वेंटुरिया इनएक्वलिस के कारण होता है। यह पत्तियों और फलों को प्रभावित करता है, जिससे काले, पपड़ीदार घाव होते हैं जो बाजार में बिक्री को कम करते हैं।",
+    "telugu": "ఆపిల్ స్కాబ్ వెంచురియా ఇనెక్వలిస్ వల్ల వస్తుంది. ఇది ఆకులు మరియు పండ్లను ప్రభావితం చేస్తుంది, చీకటి, గజ్జి గాయాలను కలిగించి మార్కెట్ విలువను తగ్గిస్తుంది."
+  },
+  "apple_black_rot": {
+    "english": "Black rot on apples causes fruit rot and leaf spots. The fungus can remain dormant in cankers on trees for years.",
+    "hindi": "सेब पर ब्लैक रॉट फलों में सड़न और पत्तियों पर धब्बे का कारण बनता है। कवक वर्षों तक पेड़ों पर कैंकर में सुप्त रह सकता है।",
+    "telugu": "ఆపిల్లపై బ్లాక్ రాట్ పండు కుళ్ళడం మరియు ఆకు మచ్చలను కలిగిస్తుంది. శిలీంధ్రం చెట్లపై క్యాంకర్లలో సంవత్సరాలపాటు నిద్రాణంగా ఉండగలదు."
+  },
+  "soybean_powdery_mildew": {
+    "english": "Powdery mildew appears as white, powdery patches on leaves. It can reduce photosynthesis and seed quality if left untreated.",
+    "hindi": "पाउडरी मिल्ड्यू पत्तियों पर सफेद, पाउडर जैसे धब्बों के रूप में दिखाई देता है। अगर इलाज न किया जाए तो यह प्रकाश संश्लेषण और बीज की गुणवत्ता को कम कर सकता है।",
+    "telugu": "పౌడరీ మిల్డ్యూ ఆకులపై తెల్లని, పొడి మచ్చలుగా కనిపిస్తుంది. చికిత్స చేయకపోతే ఇది కిరణజన్య సంయోగక్రియ మరియు విత్తన నాణ్యతను తగ్గించగలదు."
+  },
+  "groundnut_rust": {
+    "english": "Groundnut rust is caused by Puccinia arachidis. It thrives in humid conditions and can cause premature leaf drop, reducing pod fill.",
+    "hindi": "मूंगफली का रस्ट पुक्सीनिया अरैकिडिस के कारण होता है। यह नम परिस्थितियों में पनपता है और समय से पहले पत्तियां गिरा सकता है, जिससे फली भरने में कमी आती है।",
+    "telugu": "వేరుశనగ రస్ట్ పుక్సీనియా అరాకిడిస్ వల్ల వస్తుంది. ఇది తేమతో కూడిన పరిస్థితుల్లో బాగా పెరుగుతుంది మరియు అకాలంగా ఆకులు రాలడం వల్ల శనగ నింపడం తగ్గుతుంది."
+  },
+  "tomato_septoria_leaf_spot": {
+    "english": "Septoria causes small, circular spots with gray centers. It spreads through water splash and can defoliate plants rapidly.",
+    "hindi": "सेप्टोरिया छोटे, गोलाकार धब्बे पैदा करता है जिनके केंद्र ग्रे होते हैं। यह पानी के छींटों के माध्यम से फैलता है और पौधों को तेजी से पत्तियां रहित कर सकता है।",
+    "telugu": "సెప్టోరియా బూడిద రంగు కేంద్రాలతో చిన్న, వృత్తాకార మచ్చలను కలిగిస్తుంది. ఇది నీటి చినుకుల ద్వారా వ్యాపిస్తుంది మరియు మొక్కలను వేగంగా ఆకులు రహితంగా చేయగలదు."
+  },
+  "tomato_spider_mites": {
+    "english": "Spider mites are tiny pests that feed on plant sap, causing stippling and yellowing. They reproduce rapidly in hot, dry conditions.",
+    "hindi": "स्पाइडर माइट्स छोटे कीट हैं जो पौधे के रस पर फीड करते हैं, जिससे धब्बे और पीलापन होता है। वे गर्म, शुष्क परिस्थितियों में तेजी से प्रजनन करते हैं।",
+    "telugu": "స్పైడర్ మైట్స్ మొక్క రసాన్ని తినే చిన్న చీడలు, మచ్చలు మరియు పసుపు రంగును కలిగిస్తాయి. అవి వేడి, పొడి పరిస్థితుల్లో వేగంగా పునరుత్పత్తి చేస్తాయి."
+  },
+  "tomato_target_spot": {
+    "english": "Target spot appears as concentric ring patterns on leaves. It can cause significant defoliation and reduce fruit quality and yield.",
+    "hindi": "टारगेट स्पॉट पत्तियों पर केंद्रित रिंग पैटर्न के रूप में दिखाई देता है। यह महत्वपूर्ण पत्तियों के झड़ने का कारण बन सकता है और फल की गुणवत्ता और उपज को कम कर सकता है।",
+    "telugu": "టార్గెట్ స్పాట్ ఆకులపై కేంద్రీకృత వలయ నమూనాలుగా కనిపిస్తుంది. ఇది గణనీయమైన ఆకులు రాలడం మరియు పండు నాణ్యత మరియు దిగుబడిని తగ్గించగలదు."
+  },
+  "tomato_yellow_leaf_curl_virus": {
+    "english": "TYLCV is transmitted by whiteflies and causes severe stunting and yield loss. Infected plants show upward leaf curling and yellowing.",
+    "hindi": "TYLCV सफेद मक्खियों द्वारा प्रेषित होता है और गंभीर रुकावट और उपज हानि का कारण बनता है। संक्रमित पौधे ऊपर की ओर पत्ती मुड़ना और पीलापन दिखाते हैं।",
+    "telugu": "TYLCV తెల్ల ఈగల ద్వారా వ్యాప్తి చెందుతుంది మరియు తీవ్రమైన మరగుజ్జు మరియు దిగుబడి నష్టాన్ని కలిగిస్తుంది. సోకిన మొక్కలు పైకి ఆకు వంకరగా మరియు పసుపు రంగును చూపిస్తాయి."
+  },
+  "tomato_mosaic_virus": {
+    "english": "Tomato mosaic virus causes mottled leaves and reduced fruit quality. It's mechanically transmitted and extremely stable, surviving for years in dry conditions.",
+    "hindi": "टमाटर मोज़ेक वायरस धब्बेदार पत्तियां और कम फल गुणवत्ता का कारण बनता है। यह यांत्रिक रूप से प्रेषित होता है और अत्यंत स्थिर है, शुष्क परिस्थितियों में वर्षों तक जीवित रहता है।",
+    "telugu": "టమాటో మొజాయిక్ వైరస్ మచ్చల ఆకులు మరియు తగ్గిన పండు నాణ్యతను కలిగిస్తుంది. ఇది యాంత్రికంగా వ్యాప్తి చెందుతుంది మరియు చాలా స్థిరంగా ఉంటుంది, పొడి పరిస్థితుల్లో సంవత్సరాలపాటు జీవించి ఉంటుంది."
+  },
+  "corn_leaf_blight": {
+    "english": "Corn leaf blight reduces photosynthetic area and can cause significant yield losses. There are northern and southern blight types, each requiring specific management.",
+    "hindi": "मकई की पत्ती झुलसा प्रकाश संश्लेषण क्षेत्र को कम करती है और महत्वपूर्ण उपज हानि का कारण बन सकती है। उत्तरी और दक्षिणी झुलसा प्रकार हैं, प्रत्येक को विशिष्ट प्रबंधन की आवश्यकता होती है।",
+    "telugu": "మొక్కజొన్న లీఫ్ బ్లైట్ కిరణజన్య సంయోగక్రియ ప్రాంతాన్ని తగ్గిస్తుంది మరియు గణనీయమైన దిగుబడి నష్టాలను కలిగిస్తుంది. ఉత్తర మరియు దక్షిణ బ్లైట్ రకాలు ఉన్నాయి, ప్రతి దానికీ నిర్దిష్ట నిర్వహణ అవసరం."
+  },
+  "wheat_powdery_mildew": {
+    "english": "Wheat powdery mildew thrives in cool, humid conditions. It reduces grain fill and can decrease yield by 10-40% depending on severity.",
+    "hindi": "गेहूं की पाउडरी मिल्ड्यू ठंडी, नम परिस्थितियों में पनपती है। यह अनाज भरने को कम करती है और गंभीरता के आधार पर 10-40% उपज कम कर सकती है।",
+    "telugu": "గోధుమ పౌడరీ మిల్డ్యూ చల్లని, తేమతో కూడిన పరిస్థితుల్లో బాగా పెరుగుతుంది. ఇది ధాన్యం నింపడాన్ని తగ్గిస్తుంది మరియు తీవ్రతను బట్టి 10-40% దిగుబడిని తగ్గించగలదు."
+  },
+  "apple_rust": {
+    "english": "Cedar apple rust requires two hosts to complete its lifecycle. It causes yellow-orange spots on leaves and can lead to premature defoliation.",
+    "hindi": "सीडर ऐप्पल रस्ट को अपना जीवन चक्र पूरा करने के लिए दो मेजबानों की आवश्यकता होती है। यह पत्तियों पर पीले-नारंगी धब्बे का कारण बनता है और समय से पहले पत्ती गिरने का कारण बन सकता है।",
+    "telugu": "సీడార్ ఆపిల్ రస్ట్ తన జీవిత చక్రాన్ని పూర్తి చేయడానికి రెండు హోస్ట్‌లు అవసరం. ఇది ఆకులపై పసుపు-నారింజ మచ్చలను కలిగిస్తుంది మరియు అకాలంగా ఆకులు రాలడానికి దారితీస్తుంది."
+  },
+  "cotton_bacterial_spot": {
+    "english": "Bacterial spot on cotton causes angular lesions on leaves and boll rot. It's seed-borne and spreads through water splash during monsoons.",
+    "hindi": "कपास पर बैक्टीरियल स्पॉट पत्तियों पर कोणीय घाव और बोल सड़न का कारण बनता है। यह बीज-जनित है और मानसून के दौरान पानी के छींटों के माध्यम से फैलता है।",
+    "telugu": "పత్తిపై బ్యాక్టీరియల్ స్పాట్ ఆకులపై కోణీయ గాయాలు మరియు బొండ కుళ్ళడాన్ని కలిగిస్తుంది. ఇది విత్తన ద్వారా వ్యాప్తి చెందుతుంది మరియు వర్షాకాలంలో నీటి చినుకుల ద్వారా వ్యాపిస్తుంది."
+  }
+}
