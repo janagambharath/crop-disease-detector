@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Leaf Image - Crop Disease Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🌾</span>
+                    <div>
+                        <h1>AI Crop Disease Detector</h1>
+                        <p>Empowering Indian Farmers</p>
+                    </div>
+                </div>
+                
+                <div class="language-selector">
+                    <button class="lang-btn {% if lang == 'english' %}active{% endif %}" data-lang="english">English</button>
+                    <button class="lang-btn {% if lang == 'hindi' %}active{% endif %}" data-lang="hindi">हिंदी</button>
+                    <button class="lang-btn {% if lang == 'telugu' %}active{% endif %}" data-lang="telugu">తెలుగు</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="content-card">
+                <div class="upload-section">
+                    <h2 style="color: var(--primary-green); margin-bottom: 20px; text-align: center;">
+                        {% if lang == 'telugu' %}
+                            పంట ఆకు ఫోటో అప్‌లోడ్ చేయండి
+                        {% elif lang == 'hindi' %}
+                            फसल की पत्ती की फोटो अपलोड करें
+                        {% elif lang == 'english' %}
+                            Upload Crop Leaf Photo
+                        {% endif %}
+                    </h2>
+
+                    <!-- Alert Message -->
+                    <div id="alertMessage" class="alert"></div>
+
+                    <!-- Upload Form -->
+                    <form id="uploadForm" enctype="multipart/form-data">
+                        <!-- Upload Area -->
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-icon">📸</div>
+                            <h3>
+                                {% if lang == 'telugu' %}
+                                    ఇక్కడ క్లిక్ చేయండి లేదా ఫోటోను డ్రాగ్ చేయండి
+                                {% elif lang == 'hindi' %}
+                                    यहां क्लिक करें या फोटो खींचें
+                                {% else %}
+                                    Click here or drag photo
+                                {% endif %}
+                            </h3>
+                            <p>
+                                {% if lang == 'telugu' %}
+                                    JPG, PNG లేదా WEBP (గరిష్టం 16MB)
+                                {% elif lang == 'hindi' %}
+                                    JPG, PNG या WEBP (अधिकतम 16MB)
+                                {% else %}
+                                    JPG, PNG or WEBP (Max 16MB)
+                                {% endif %}
+                            </p>
+                            <input type="file" 
+                                   id="fileInput" 
+                                   name="leaf_image" 
+                                   accept="image/jpeg,image/jpg,image/png,image/webp">
+                        </div>
+
+                        <!-- Camera Button for Mobile -->
+                        <div style="text-align: center; margin: 20px 0;">
+                            <button type="button" class="btn btn-secondary" onclick="captureFromCamera()">
+                                <span>📷</span>
+                                {% if lang == 'telugu' %}
+                                    కెమెరా నుండి తీయండి
+                                {% elif lang == 'hindi' %}
+                                    कैमरे से लें
+                                {% else %}
+                                    Capture from Camera
+                                {% endif %}
+                            </button>
+                        </div>
+
+                        <!-- Image Preview -->
+                        <div class="image-preview" id="imagePreview">
+                            <div class="preview-container">
+                                <img id="previewImg" src="" alt="Preview">
+                                <button type="button" class="remove-image" onclick="removeImage()" title="Remove">×</button>
+                            </div>
+                        </div>
+
+                        <!-- Loading Indicator -->
+                        <div class="loading" id="loadingIndicator">
+                            <div class="spinner"></div>
+                            <p>
+                                {% if lang == 'telugu' %}
+                                    మీ ఫోటోను విశ్లేషిస్తోంది... దయచేసి వేచి ఉండండి
+                                {% elif lang == 'hindi' %}
+                                    आपकी फोटो का विश्लेषण हो रहा है... कृपया प्रतीक्षा करें
+                                {% else %}
+                                    Analyzing your photo... Please wait
+                                {% endif %}
+                            </p>
+                        </div>
+
+                        <!-- Upload Button -->
+                        <div style="text-align: center; margin-top: 30px;">
+                            <button type="submit" id="uploadBtn" class="btn btn-primary" disabled>
+                                <span>🔍</span>
+                                {% if lang == 'telugu' %}
+                                    వ్యాధిని గుర్తించండి
+                                {% elif lang == 'hindi' %}
+                                    बीमारी का पता लगाएं
+                                {% else %}
+                                    Detect Disease
+                                {% endif %}
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Instructions -->
+                    <div style="margin-top: 40px; background: white; padding: 30px; border-radius: 15px; box-shadow: var(--shadow);">
+                        <h3 style="color: var(--primary-green); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <span>💡</span>
+                            {% if lang == 'telugu' %}
+                                మంచి ఫలితాల కోసం చిట్కాలు
+                            {% elif lang == 'hindi' %}
+                                बेहतर परिणामों के लिए सुझाव
+                            {% else %}
+                                Tips for Best Results
+                            {% endif %}
+                        </h3>
+                        <ul style="line-height: 2; margin-left: 20px;">
+                            <li>
+                                {% if lang == 'telugu' %}
+                                    ✅ వ్యాధి లక్షణాలతో స్పష్టమైన ఆకు ఫోటో తీయండి
+                                {% elif lang == 'hindi' %}
+                                    ✅ बीमारी के लक्षणों वाली साफ पत्ती की फोटो लें
+                                {% else %}
+                                    ✅ Take clear photo of leaf showing disease symptoms
+                                {% endif %}
+                            </li>
+                            <li>
+                                {% if lang == 'telugu' %}
+                                    ✅ మంచి వెలుతురులో ఫోటో తీయండి (ఫ్లాష్ లేకుండా)
+                                {% elif lang == 'hindi' %}
+                                    ✅ अच्छी रोशनी में फोटो लें (फ्लैश के बिना)
+                                {% else %}
+                                    ✅ Capture in good lighting (without flash)
+                                {% endif %}
+                            </li>
+                            <li>
+                                {% if lang == 'telugu' %}
+                                    ✅ ఆకు మాత్రమే కనిపించేలా ఫ్రేమ్ చేయండి
+                                {% elif lang == 'hindi' %}
+                                    ✅ सिर्फ पत्ती दिखाई दे ऐसा फ्रेम करें
+                                {% else %}
+                                    ✅ Frame only the leaf in the photo
+                                {% endif %}
+                            </li>
+                            <li>
+                                {% if lang == 'telugu' %}
+                                    ✅ అస్పష్టమైన లేదా చీకటి ఫోటోలను నివారించండి
+                                {% elif lang == 'hindi' %}
+                                    ✅ धुंधली या अंधेरे फोटो से बचें
+                                {% else %}
+                                    ✅ Avoid blurry or dark images
+                                {% endif %}
+                            </li>
+                            <li>
+                                {% if lang == 'telugu' %}
+                                    ✅ ఆకు ప్రభావిత భాగాన్ని దగ్గరగా చూపించండి
+                                {% elif lang == 'hindi' %}
+                                    ✅ पत्ती के प्रभावित हिस्से को करीब से दिखाएं
+                                {% else %}
+                                    ✅ Show affected part of leaf up close
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>
+                {% if lang == 'telugu' %}
+                    భారతీయ రైతులను సాధికారత చేయడం
+                {% elif lang == 'hindi' %}
+                    भारतीय किसानों को सशक्त बनाना
+                {% else %}
+                    Empowering Indian Farmers
+                {% endif %}
+            </p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
