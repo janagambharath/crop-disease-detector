@@ -5,6 +5,7 @@ import json
 from PIL import Image
 import numpy as np
 import torch
+import torch.nn as nn
 import torchvision.transforms as transforms
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -57,13 +58,25 @@ def load_resources():
         # Load PyTorch model
         model_path = 'model/plant_disease_model_1_latest.pt'
         if os.path.exists(model_path):
-            model = torch.load(model_path, map_location=device)
-            model.eval()
-            logger.info("PyTorch model loaded successfully")
+            try:
+                # Load the entire model (weights + architecture)
+                model = torch.load(model_path, map_location=device, weights_only=False)
+                model.eval()
+                
+                # Verify model loaded correctly
+                if hasattr(model, '__class__'):
+                    logger.info(f"PyTorch model loaded successfully: {model.__class__.__name__}")
+                else:
+                    logger.warning("Model loaded but structure unclear")
+                    
+            except Exception as e:
+                logger.error(f"Error loading PyTorch model: {str(e)}")
+                logger.warning("Falling back to mock predictions")
+                model = None
         else:
             logger.warning(f"Model not found at {model_path}. Using mock predictions.")
         
-        # Define image transforms (adjust based on your model's training)
+        # Define image transforms (standard ImageNet normalization)
         transforms_pipeline = transforms.Compose([
             transforms.Resize((224, 224)),
             transforms.ToTensor(),
@@ -79,7 +92,7 @@ def load_resources():
         # Load class labels
         with open('model/class_labels.json', 'r', encoding='utf-8') as f:
             class_labels = json.load(f)
-        logger.info("Class labels loaded successfully")
+        logger.info(f"Class labels loaded: {len(class_labels)} classes")
         
         # Load disease information
         try:
@@ -132,7 +145,7 @@ def predict_disease(image_path):
     """Predict disease from leaf image using PyTorch model"""
     try:
         if model is None:
-            # Mock prediction for development
+            # Mock prediction for development/testing
             logger.warning("Using mock prediction - model not loaded")
             return {
                 'crop': 'tomato',
@@ -153,6 +166,8 @@ def predict_disease(image_path):
             
             class_idx = predicted.item()
             confidence_score = confidence.item() * 100
+        
+        logger.info(f"Prediction: class {class_idx}, confidence {confidence_score:.2f}%")
         
         # Get disease info from class labels
         disease_info_item = class_labels.get(str(class_idx), {
@@ -398,7 +413,8 @@ def health():
         'status': 'healthy',
         'model_loaded': model is not None,
         'translations_loaded': translations is not None,
-        'device': str(device) if device else 'not set'
+        'device': str(device) if device else 'not set',
+        'num_classes': len(class_labels) if class_labels else 0
     })
 
 @app.errorhandler(413)
