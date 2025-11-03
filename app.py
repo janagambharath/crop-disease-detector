@@ -11,6 +11,7 @@ import requests
 from dotenv import load_dotenv
 from datetime import datetime
 import logging
+from pathlib import Path
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -25,16 +26,22 @@ app.config['UPLOAD_FOLDER'] = 'static/uploads/'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'webp'}
 
-# Ensure upload directory exists (handle both empty dir and missing dir cases)
+# Model configuration
+MODEL_DIR = 'model'
+MODEL_FILENAME = 'plant_disease_model_1_latest.pt'
+MODEL_PATH = os.path.join(MODEL_DIR, MODEL_FILENAME)
+MODEL_URL = "https://huggingface.co/spaces/bharath1108/crop-disease-model/resolve/main/plant_disease_model_1_latest.pt"
+
+# Ensure necessary directories exist
 try:
+    os.makedirs(MODEL_DIR, exist_ok=True)
     if not os.path.exists(app.config['UPLOAD_FOLDER']):
         os.makedirs(app.config['UPLOAD_FOLDER'])
     elif not os.path.isdir(app.config['UPLOAD_FOLDER']):
-        # If it's a file, remove it and create directory
         os.remove(app.config['UPLOAD_FOLDER'])
         os.makedirs(app.config['UPLOAD_FOLDER'])
 except Exception as e:
-    logger.warning(f"Could not create upload directory: {e}. Will attempt to use it anyway.")
+    logger.warning(f"Could not create directories: {e}. Will attempt to use them anyway.")
 
 # OpenRouter API configuration
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
@@ -49,6 +56,51 @@ translations = None
 class_labels = None
 disease_info = None
 
+def download_model_from_huggingface():
+    """Download PyTorch model from Hugging Face if not exists locally"""
+    if os.path.exists(MODEL_PATH):
+        file_size = os.path.getsize(MODEL_PATH)
+        logger.info(f"Model already exists at {MODEL_PATH} ({file_size / (1024*1024):.2f} MB)")
+        return True
+    
+    logger.info(f"Downloading model from Hugging Face: {MODEL_URL}")
+    try:
+        # Download with streaming to handle large files
+        response = requests.get(MODEL_URL, stream=True, timeout=300)
+        response.raise_for_status()
+        
+        # Get total file size
+        total_size = int(response.headers.get('content-length', 0))
+        logger.info(f"Model size: {total_size / (1024*1024):.2f} MB")
+        
+        # Download in chunks with progress
+        downloaded_size = 0
+        chunk_size = 8192
+        
+        with open(MODEL_PATH, 'wb') as f:
+            for chunk in response.iter_content(chunk_size=chunk_size):
+                if chunk:
+                    f.write(chunk)
+                    downloaded_size += len(chunk)
+                    if total_size > 0:
+                        progress = (downloaded_size / total_size) * 100
+                        if downloaded_size % (1024 * 1024 * 10) == 0:  # Log every 10MB
+                            logger.info(f"Download progress: {progress:.1f}%")
+        
+        logger.info(f"Model downloaded successfully to {MODEL_PATH}")
+        return True
+        
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Error downloading model from Hugging Face: {str(e)}")
+        if os.path.exists(MODEL_PATH):
+            os.remove(MODEL_PATH)
+        return False
+    except Exception as e:
+        logger.error(f"Unexpected error during model download: {str(e)}")
+        if os.path.exists(MODEL_PATH):
+            os.remove(MODEL_PATH)
+        return False
+
 def load_resources():
     """Load PyTorch model, translations, and class labels"""
     global model, device, transforms_pipeline, translations, class_labels, disease_info
@@ -58,12 +110,15 @@ def load_resources():
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         logger.info(f"Using device: {device}")
         
+        # Download model if needed
+        model_downloaded = download_model_from_huggingface()
+        
         # Load PyTorch model
-        model_path = 'model/plant_disease_model_1_latest.pt'
-        if os.path.exists(model_path):
+        if model_downloaded and os.path.exists(MODEL_PATH):
             try:
+                logger.info(f"Loading model from {MODEL_PATH}...")
                 # Load the entire model (weights + architecture)
-                model = torch.load(model_path, map_location=device, weights_only=False)
+                model = torch.load(MODEL_PATH, map_location=device, weights_only=False)
                 model.eval()
                 
                 # Verify model loaded correctly
@@ -77,7 +132,7 @@ def load_resources():
                 logger.warning("Falling back to mock predictions")
                 model = None
         else:
-            logger.warning(f"Model not found at {model_path}. Using mock predictions.")
+            logger.warning(f"Model not found at {MODEL_PATH}. Using mock predictions.")
         
         # Define image transforms (standard ImageNet normalization)
         transforms_pipeline = transforms.Compose([
@@ -447,6 +502,7 @@ def health():
     return jsonify({
         'status': 'healthy',
         'model_loaded': model is not None,
+        'model_exists': os.path.exists(MODEL_PATH),
         'translations_loaded': translations is not None,
         'device': str(device) if device else 'not set',
         'num_classes': len(class_labels) if class_labels else 0
