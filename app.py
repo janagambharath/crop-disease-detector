@@ -7,7 +7,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torchvision.transforms as transforms
-from openai import OpenAI
+import requests
 from dotenv import load_dotenv
 from datetime import datetime
 import logging
@@ -36,15 +36,10 @@ try:
 except Exception as e:
     logger.warning(f"Could not create upload directory: {e}. Will attempt to use it anyway.")
 
-# Initialize OpenRouter client
-openrouter_client = OpenAI(
-    base_url="https://openrouter.ai/api/v1",
-    api_key=os.environ.get("OPENROUTER_API_KEY"),
-    default_headers={
-        "HTTP-Referer": os.environ.get("APP_URL", "http://localhost:5000"),
-        "X-Title": "Crop Disease Detector"
-    }
-)
+# OpenRouter API configuration
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+APP_URL = os.environ.get("APP_URL", "http://localhost:5000")
 
 # Global variables for model and translations
 model = None
@@ -252,31 +247,63 @@ As an agricultural expert, provide clear, actionable treatment advice for this c
 Keep language simple and practical. Use measurements familiar to Indian farmers (liters per acre, grams per liter). Focus on treatments available in rural India."""
 
     try:
-        response = openrouter_client.chat.completions.create(
-            model="meta-llama/llama-3.1-8b-instruct:free",
-            messages=[
-                {
-                    "role": "system", 
-                    "content": "You are an expert agricultural advisor helping Indian farmers. You speak Telugu, Hindi, and English fluently. Provide practical, field-tested advice suitable for small and medium farmers."
-                },
-                {
-                    "role": "user", 
-                    "content": prompt
-                }
-            ],
-            temperature=0.7,
-            max_tokens=1500
+        # Make request to OpenRouter API using requests
+        response = requests.post(
+            url=OPENROUTER_URL,
+            headers={
+                "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+                "Content-Type": "application/json",
+                "HTTP-Referer": APP_URL,
+                "X-Title": "Crop Disease Detector"
+            },
+            json={
+                "model": "meta-llama/llama-3.1-8b-instruct:free",
+                "messages": [
+                    {
+                        "role": "system", 
+                        "content": "You are an expert agricultural advisor helping Indian farmers. You speak Telugu, Hindi, and English fluently. Provide practical, field-tested advice suitable for small and medium farmers."
+                    },
+                    {
+                        "role": "user", 
+                        "content": prompt
+                    }
+                ],
+                "temperature": 0.7,
+                "max_tokens": 1500
+            },
+            timeout=30  # 30 second timeout
         )
         
-        return response.choices[0].message.content
+        response.raise_for_status()  # Raise exception for bad status codes
+        
+        result = response.json()
+        return result['choices'][0]['message']['content']
     
-    except Exception as e:
-        logger.error(f"Error generating treatment advice: {str(e)}")
+    except requests.exceptions.Timeout:
+        logger.error("OpenRouter API request timed out")
+        fallback_messages = {
+            'english': f"Treatment advice request timed out. Please try again in a moment.",
+            'hindi': f"उपचार सलाह अनुरोध समय समाप्त हो गया। कृपया कुछ देर में फिर से प्रयास करें।",
+            'telugu': f"చికిత్స సలహా అభ్యర్థన సమయం ముగిసింది. దయచేసి కొద్దిసేపు తర్వాత మళ్లీ ప్రయత్నించండి."
+        }
+        return fallback_messages.get(language, fallback_messages['english'])
+    
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Error calling OpenRouter API: {str(e)}")
         # Fallback response
         fallback_messages = {
             'english': f"Treatment advice for {disease_display} in {crop_display} is being prepared. Please try again in a moment.",
             'hindi': f"{crop_display} में {disease_display} के लिए उपचार सलाह तैयार की जा रही है। कृपया कुछ देर में फिर से प्रयास करें।",
             'telugu': f"{crop_display}లో {disease_display} కోసం చికిత్స సలహా సిద్ధం చేయబడుతోంది. దయచేసి కొద్దిసేపు తర్వాత మళ్లీ ప్రయత్నించండి."
+        }
+        return fallback_messages.get(language, fallback_messages['english'])
+    
+    except Exception as e:
+        logger.error(f"Unexpected error generating treatment advice: {str(e)}")
+        fallback_messages = {
+            'english': f"Unable to generate treatment advice at this time. Please try again later.",
+            'hindi': f"इस समय उपचार सलाह तैयार करने में असमर्थ। कृपया बाद में पुन: प्रयास करें।",
+            'telugu': f"ఈ సమయంలో చికిత్స సలహాను రూపొందించడం సాధ్యం కాలేదు. దయచేసి తర్వాత మళ్లీ ప్రయత్నించండి."
         }
         return fallback_messages.get(language, fallback_messages['english'])
 
