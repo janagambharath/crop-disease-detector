@@ -106,20 +106,39 @@ def load_resources():
     global model, device, transforms_pipeline, translations, class_labels, disease_info
     
     try:
-        # Set device
-        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        # Set device - force CPU to save memory
+        device = torch.device('cpu')
         logger.info(f"Using device: {device}")
         
         # Download model if needed
         model_downloaded = download_model_from_huggingface()
         
-        # Load PyTorch model
+        # Load PyTorch model with memory optimization
         if model_downloaded and os.path.exists(MODEL_PATH):
             try:
                 logger.info(f"Loading model from {MODEL_PATH}...")
+                
+                # Memory optimization: Load with reduced precision
+                import gc
+                gc.collect()  # Force garbage collection before loading
+                
                 # Load the entire model (weights + architecture)
-                model = torch.load(MODEL_PATH, map_location=device, weights_only=False)
+                model = torch.load(
+                    MODEL_PATH, 
+                    map_location=device, 
+                    weights_only=False
+                )
                 model.eval()
+                
+                # Use half precision to reduce memory (if supported)
+                try:
+                    model = model.half()
+                    logger.info("Model converted to half precision (FP16)")
+                except:
+                    logger.info("Half precision not supported, using full precision")
+                
+                # Force cleanup
+                gc.collect()
                 
                 # Verify model loaded correctly
                 if hasattr(model, '__class__'):
@@ -194,6 +213,14 @@ def preprocess_image(image_path):
         img = Image.open(image_path).convert('RGB')
         img_tensor = transforms_pipeline(img)
         img_tensor = img_tensor.unsqueeze(0)  # Add batch dimension
+        
+        # Convert to half precision if model uses it
+        if model is not None:
+            try:
+                img_tensor = img_tensor.half()
+            except:
+                pass
+        
         return img_tensor
     except Exception as e:
         logger.error(f"Error preprocessing image: {str(e)}")
