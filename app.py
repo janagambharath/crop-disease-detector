@@ -25,8 +25,16 @@ app.config['UPLOAD_FOLDER'] = 'static/uploads/'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'webp'}
 
-# Ensure upload directory exists
-os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+# Ensure upload directory exists (handle both empty dir and missing dir cases)
+try:
+    if not os.path.exists(app.config['UPLOAD_FOLDER']):
+        os.makedirs(app.config['UPLOAD_FOLDER'])
+    elif not os.path.isdir(app.config['UPLOAD_FOLDER']):
+        # If it's a file, remove it and create directory
+        os.remove(app.config['UPLOAD_FOLDER'])
+        os.makedirs(app.config['UPLOAD_FOLDER'])
+except Exception as e:
+    logger.warning(f"Could not create upload directory: {e}. Will attempt to use it anyway.")
 
 # Initialize OpenRouter client
 openrouter_client = OpenAI(
