@@ -2,14 +2,14 @@
 Flask==3.0.0
 Werkzeug==3.0.1
 
-# PyTorch and Image Processing - Updated for latest versions
+# PyTorch and Image Processing
 torch>=2.5.0
 torchvision>=0.20.0
 Pillow==11.0.0
 numpy>=1.24.0,<2.0.0
 
-# OpenRouter/OpenAI API
-openai==1.6.1
+# HTTP requests for OpenRouter API
+requests==2.31.0
 
 # Environment and utilities
 python-dotenv==1.0.0
